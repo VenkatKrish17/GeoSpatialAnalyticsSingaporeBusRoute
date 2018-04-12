@@ -17,7 +17,7 @@
   print(length(busRoute))
   
   busStops <- NULL
-  
+  filename = paste("Route",serviceNo,".csv",sep="")
   for(i in  seq(1,length(busRoute))) {
     
     unlisted<-unlist(busRoute[i])
@@ -40,7 +40,8 @@
     }
     
   }
-   return(busStops)
+  write.csv(busStops, file=filename) 
+  return(busStops)
     
   }
   
